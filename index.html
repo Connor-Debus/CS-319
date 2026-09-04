@@ -32,7 +32,7 @@
           <div class="semester-progress"><span></span></div>
           <small>Week 7 of 16</small>
         </div>
-        <div class="version-chip"><span class="status-dot"></span> Version 1 · Basic</div>
+        <div class="version-chip"><span class="status-dot"></span> Version 2 · Enhanced</div>
       </div>
     </aside>
 
@@ -56,26 +56,11 @@
           <button class="primary-button" id="quick-add"><span>＋</span> Add assignment</button>
         </div>
         <div class="stats-grid">
-          <article class="stat-card coral-card">
-            <div class="stat-heading"><span>Current GPA</span><span class="stat-icon">↗</span></div>
-            <strong id="gpa-value">3.68</strong>
-            <div class="stat-foot"><span class="trend-up">↑ 0.12</span> this semester</div>
-          </article>
-          <article class="stat-card ink-card">
-            <div class="stat-heading"><span>Due this week</span><span class="stat-icon">◷</span></div>
-            <strong id="due-value">0</strong>
-            <div class="stat-foot"><span id="urgent-value" class="trend-light">0 urgent</span> across all courses</div>
-          </article>
-          <article class="stat-card cream-card">
-            <div class="stat-heading"><span>Study streak</span><span class="stat-icon">✦</span></div>
-            <strong>12 <small>days</small></strong>
-            <div class="stat-foot"><span class="trend-dark">Best: 18 days</span></div>
-          </article>
-          <article class="stat-card blue-card">
-            <div class="stat-heading"><span>Tasks completed</span><span class="stat-icon">✓</span></div>
-            <strong id="completed-value">0%</strong>
-            <div class="stat-foot"><span id="completed-count">0 of 0</span> assignments</div>
-          </article>
+          <article class="stat-card coral-card"><div class="stat-heading"><span>Total assignments</span><span class="stat-icon">▤</span></div><strong id="total-value">0</strong><div class="stat-foot">in your study plan</div></article>
+          <article class="stat-card ink-card"><div class="stat-heading"><span>Completed</span><span class="stat-icon">✓</span></div><strong id="completed-value">0</strong><div class="stat-foot"><span id="completed-count">0 of 0</span> assignments</div></article>
+          <article class="stat-card cream-card"><div class="stat-heading"><span>Remaining</span><span class="stat-icon">◷</span></div><strong id="remaining-value">0</strong><div class="stat-foot">still to complete</div></article>
+          <article class="stat-card blue-card"><div class="stat-heading"><span>Overdue</span><span class="stat-icon">!</span></div><strong id="overdue-value">0</strong><div class="stat-foot">unfinished past due</div></article>
+          <article class="stat-card lavender-card"><div class="stat-heading"><span>Average grade</span><span class="stat-icon">↗</span></div><strong id="average-value">—</strong><div class="stat-foot"><span id="graded-count">0</span> graded assignments</div></article>
         </div>
         <div class="dashboard-grid">
           <article class="panel focus-panel">
@@ -100,7 +85,7 @@
 
       <section class="view" id="assignments-view" data-page="assignments">
         <div class="welcome-row"><div><p class="section-kicker">Stay ahead</p><h2>Assignments</h2></div><button class="primary-button" id="add-assignment"><span>＋</span> Add assignment</button></div>
-        <article class="panel table-panel"><div class="panel-header"><div><p class="section-kicker">Fall 2026</p><h3>Assignment list</h3></div></div><div id="assignments-table" class="data-table-wrap"></div></article>
+        <article class="panel table-panel"><div class="panel-header"><div><p class="section-kicker">Fall 2026</p><h3>Assignment list</h3></div><span class="table-count">Grade any assignment when it is returned</span></div><div id="assignments-table" class="data-table-wrap"></div></article>
       </section>
     </main>
   </div>

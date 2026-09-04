@@ -14,21 +14,21 @@ The initial version establishes the core workflow:
 - View course grades and assignment counts
 - Persist data through browser refresh with `localStorage`
 
-### Version 2 — Future Enhancements
+### Version 2 — Enhanced Version
 
-Version 2 will be developed after the basic workflow is demonstrated. Possible enhancements include richer progress views, assignment search and filters, responsive improvements, and additional study-planning tools.
+The Version 2 build adds assignment metrics and optional grading:
 
-The current app is the Version 1 basic build. Create the first Git checkpoint now. After the Version 2 features are provided and implemented, create the second checkpoint:
+- Total, completed, remaining, and overdue assignment counts
+- Optional grades on assignments
+- Average grade calculated only from graded assignments
+- Inline grade entry and clear overdue labels
+
+The current app is the Version 2 enhanced build. Version 1 remains available on the `Version_1` branch.
 
 ```bash
-git init
 git add .
-git commit -m "Build Version 1 basic study planner"
-# Add Version 2 requirements and implementation later, then:
-# git add .
-# git commit -m "Add Version 2 enhancements"
-# git tag v1.0-basic
-# git tag v2.0-enhanced
+git commit -m "Add Version 2 assignment metrics and grading"
+git tag v2.0
 ```
 
 ## Run locally
@@ -60,3 +60,13 @@ Then visit <http://localhost:8000>.
 - Change priority.
 - Change status.
 - Refresh the browser and confirm data remains.
+
+## Version 2 verification
+
+Create five assignments. Complete exactly two, leave three unfinished, and set one of the unfinished assignments to a past due date. Give grades to exactly three assignments and leave two ungraded. Verify the dashboard displays:
+
+- Total = 5
+- Completed = 2
+- Remaining = 3
+- Overdue = 1
+- Average grade uses only the three graded assignments
