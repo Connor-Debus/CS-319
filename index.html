@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A focused student study planner and grade dashboard.">
+  <title>Study Board | Student Planner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">SB</div>
+        <div>
+          <strong>Study Board</strong>
+          <span>Student workspace</span>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-link active" data-view="overview"><span class="nav-icon">◈</span> Overview</button>
+        <button class="nav-link" data-view="courses"><span class="nav-icon">▤</span> Courses</button>
+        <button class="nav-link" data-view="assignments"><span class="nav-icon">✓</span> Assignments</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="semester-card">
+          <span class="eyebrow">Current semester</span>
+          <strong>Fall 2026</strong>
+          <div class="semester-progress"><span></span></div>
+          <small>Week 7 of 16</small>
+        </div>
+        <div class="version-chip"><span class="status-dot"></span> Version 2 · Enhanced</div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Friday, September 4, 2026</p>
+          <h1 id="page-title">Good morning, Alex<span class="accent">.</span></h1>
+        </div>
+        <div class="topbar-actions">
+          <button class="icon-button" id="theme-toggle" aria-label="Toggle color theme" title="Toggle color theme">☼</button>
+          <button class="avatar" aria-label="Open profile">AL</button>
+        </div>
+      </header>
+
+      <section class="view active-view" id="overview-view" data-page="overview">
+        <div class="welcome-row">
+          <div>
+            <p class="section-kicker">Your academic pulse</p>
+            <h2>Make this week count.</h2>
+          </div>
+          <button class="primary-button" id="quick-add"><span>＋</span> Add assignment</button>
+        </div>
+        <div class="stats-grid">
+          <article class="stat-card coral-card">
+            <div class="stat-heading"><span>Current GPA</span><span class="stat-icon">↗</span></div>
+            <strong id="gpa-value">3.68</strong>
+            <div class="stat-foot"><span class="trend-up">↑ 0.12</span> this semester</div>
+          </article>
+          <article class="stat-card ink-card">
+            <div class="stat-heading"><span>Due this week</span><span class="stat-icon">◷</span></div>
+            <strong id="due-value">0</strong>
+            <div class="stat-foot"><span id="urgent-value" class="trend-light">0 urgent</span> across all courses</div>
+          </article>
+          <article class="stat-card cream-card">
+            <div class="stat-heading"><span>Study streak</span><span class="stat-icon">✦</span></div>
+            <strong>12 <small>days</small></strong>
+            <div class="stat-foot"><span class="trend-dark">Best: 18 days</span></div>
+          </article>
+          <article class="stat-card blue-card">
+            <div class="stat-heading"><span>Tasks completed</span><span class="stat-icon">✓</span></div>
+            <strong id="completed-value">0%</strong>
+            <div class="stat-foot"><span id="completed-count">0 of 0</span> assignments</div>
+          </article>
+        </div>
+        <div class="dashboard-grid">
+          <article class="panel focus-panel">
+            <div class="panel-header"><div><p class="section-kicker">Priority queue</p><h3>What needs your focus</h3></div><button class="text-button" data-view-target="assignments">See all <span>→</span></button></div>
+            <div id="focus-list" class="focus-list"></div>
+          </article>
+          <article class="panel progress-panel">
+            <div class="panel-header"><div><p class="section-kicker">Grade snapshot</p><h3>Course progress</h3></div><button class="text-button" data-view-target="courses">Manage <span>→</span></button></div>
+            <div id="course-progress" class="course-progress"></div>
+          </article>
+        </div>
+        <article class="panel calendar-panel">
+          <div class="panel-header"><div><p class="section-kicker">Coming up</p><h3>Upcoming deadlines</h3></div><button class="text-button" data-view-target="assignments">Calendar view <span>→</span></button></div>
+          <div id="upcoming-list" class="upcoming-list"></div>
+        </article>
+      </section>
+
+      <section class="view" id="courses-view" data-page="courses">
+        <div class="welcome-row"><div><p class="section-kicker">Your schedule</p><h2>Courses</h2></div><button class="primary-button" id="add-course"><span>＋</span> Add course</button></div>
+        <article class="panel table-panel"><div class="panel-header"><div><p class="section-kicker">Fall 2026</p><h3>Course roster</h3></div><span class="table-count" id="course-count">0 courses</span></div><div id="courses-table" class="data-table-wrap"></div></article>
+      </section>
+
+      <section class="view" id="assignments-view" data-page="assignments">
+        <div class="welcome-row"><div><p class="section-kicker">Stay ahead</p><h2>Assignments</h2></div><button class="primary-button" id="add-assignment"><span>＋</span> Add assignment</button></div>
+        <article class="panel table-panel"><div class="assignment-toolbar"><div class="filter-tabs" role="group" aria-label="Filter assignments"><button class="filter-tab active" data-filter="all">All</button><button class="filter-tab" data-filter="todo">To do</button><button class="filter-tab" data-filter="done">Completed</button></div><label class="search-box"><span>⌕</span><input id="assignment-search" type="search" placeholder="Search assignments" aria-label="Search assignments"></label></div><div id="assignments-table" class="data-table-wrap"></div></article>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modal-backdrop" hidden><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" id="modal-close" aria-label="Close dialog">×</button><p class="section-kicker" id="modal-kicker">New item</p><h2 id="modal-title">Add assignment</h2><form id="modal-form"><div id="form-fields"></div><div class="modal-actions"><button type="button" class="secondary-button" id="modal-cancel">Cancel</button><button type="submit" class="primary-button">Save changes</button></div></form></div></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
