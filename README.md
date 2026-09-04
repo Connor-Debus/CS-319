@@ -14,29 +14,21 @@ The initial version establishes the core workflow:
 - View course grades and assignment counts
 - Persist data through browser refresh with `localStorage`
 
-### Version 2 — Enhanced Version
+### Version 2 — Future Enhancements
 
-The enhanced version keeps the Version 1 workflow and adds:
+Version 2 will be developed after the basic workflow is demonstrated. Possible enhancements include richer progress views, assignment search and filters, responsive improvements, and additional study-planning tools.
 
-- Responsive dashboard layout for mobile and desktop
-- Overview dashboard with GPA, due-work, completion, and focus summaries
-- Assignment search and All / To do / Completed filters
-- Inline priority and status controls
-- Upcoming deadlines and course progress visualizations
-- Light theme toggle
-- Accessible labels, dialog behavior, empty states, and confirmation prompts
-
-The current app is the Version 2 enhanced build. For a classroom demonstration, create a Git checkpoint after the Basic Version, then a second checkpoint after the enhancements:
+The current app is the Version 1 basic build. Create the first Git checkpoint now. After the Version 2 features are provided and implemented, create the second checkpoint:
 
 ```bash
 git init
 git add .
 git commit -m "Build Version 1 basic study planner"
-# Add Version 2 enhancements, then:
-git add .
-git commit -m "Enhance dashboard with progress views and filters"
-git tag v1.0-basic
-git tag v2.0-enhanced
+# Add Version 2 requirements and implementation later, then:
+# git add .
+# git commit -m "Add Version 2 enhancements"
+# git tag v1.0-basic
+# git tag v2.0-enhanced
 ```
 
 ## Run locally
