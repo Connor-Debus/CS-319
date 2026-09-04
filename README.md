@@ -45,8 +45,14 @@ Then visit <http://localhost:8000>.
 
 1. Push the project to a GitHub repository.
 2. Open **Settings → Pages**.
-3. Choose **Deploy from a branch**, select `main`, and choose `/ (root)`.
+3. Choose **Deploy from a branch**, select `Version_2`, and choose `/ (root)`.
 4. Save. GitHub Pages will publish `index.html`.
+
+The Version 2 deployment URL will be:
+
+`https://connor-debus.github.io/CS-319/`
+
+For the Version 1 demonstration, temporarily select the `Version_1` branch in the same Pages settings. GitHub Pages uses one published branch at a time for this repository.
 
 ## Required test checklist
 
