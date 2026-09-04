@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Study Planner & Grade Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Student Study Planner & Grade Dashboard</h1>
+            <p class="subtitle">Organize your courses and track your assignments</p>
+        </header>
+
+        <main>
+            <!-- Courses Section -->
+            <section class="section courses-section">
+                <div class="section-header">
+                    <h2>My Courses</h2>
+                    <button id="addCourseBtn" class="btn btn-primary">+ Add Course</button>
+                </div>
+                <div id="coursesList" class="courses-list">
+                    <p class="empty-state">No courses yet. Add one to get started!</p>
+                </div>
+            </section>
+
+            <!-- Add/Edit Course Modal -->
+            <div id="courseModal" class="modal hidden">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 id="courseModalTitle">Add Course</h3>
+                        <button class="close-btn" id="closeCourseModal">&times;</button>
+                    </div>
+                    <form id="courseForm">
+                        <div class="form-group">
+                            <label for="courseName">Course Name:</label>
+                            <input type="text" id="courseName" required placeholder="e.g., CS-319">
+                        </div>
+                        <div class="form-group">
+                            <label for="courseDescription">Description:</label>
+                            <textarea id="courseDescription" placeholder="Course details..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="courseGrade">Current Grade:</label>
+                            <input type="number" id="courseGrade" min="0" max="100" placeholder="0-100">
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save Course</button>
+                            <button type="button" class="btn btn-secondary" id="cancelCourseBtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Assignments Section -->
+            <section class="section assignments-section">
+                <div class="section-header">
+                    <h2>Assignments</h2>
+                    <button id="addAssignmentBtn" class="btn btn-primary">+ Add Assignment</button>
+                </div>
+                <div id="assignmentsList" class="assignments-list">
+                    <p class="empty-state">No assignments yet. Add one to track your work!</p>
+                </div>
+            </section>
+
+            <!-- Add/Edit Assignment Modal -->
+            <div id="assignmentModal" class="modal hidden">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 id="assignmentModalTitle">Add Assignment</h3>
+                        <button class="close-btn" id="closeAssignmentModal">&times;</button>
+                    </div>
+                    <form id="assignmentForm">
+                        <div class="form-group">
+                            <label for="assignmentCourse">Course:</label>
+                            <select id="assignmentCourse" required>
+                                <option value="">Select a course...</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="assignmentName">Assignment Name:</label>
+                            <input type="text" id="assignmentName" required placeholder="e.g., Project 1">
+                        </div>
+                        <div class="form-group">
+                            <label for="assignmentDueDate">Due Date:</label>
+                            <input type="date" id="assignmentDueDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="assignmentStatus">Status:</label>
+                            <select id="assignmentStatus">
+                                <option value="not-started">Not Started</option>
+                                <option value="in-progress">In Progress</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="assignmentPriority">Priority:</label>
+                            <select id="assignmentPriority">
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="assignmentPoints">Points/Grade:</label>
+                            <input type="number" id="assignmentPoints" min="0" max="100" placeholder="0-100">
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save Assignment</button>
+                            <button type="button" class="btn btn-secondary" id="cancelAssignmentBtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Student Study Planner | Version 1.0 - Basic</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
