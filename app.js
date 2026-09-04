@@ -1,4 +1,4 @@
-const STORAGE_KEY = 'study-board-state-v2';
+const STORAGE_KEY = 'study-board-state-v1';
 const defaultState = {
   courses: [
     { id: 'c1', name: 'Data Structures', code: 'CS 201', instructor: 'Dr. Chen', grade: 92, color: '#f26d5b' },
